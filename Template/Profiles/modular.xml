@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectProfile type="default" version="1.12.0">
+  <projectDirectory>
+    <projectProfileFile />
+    <applicationDirectory>
+      <apisDirectory enabled="false" />
+      <configsDirectory>
+        <applicationConfigForm type="ini" />
+        <applicationConfigFile type="ini" />
+      </configsDirectory>
+      <controllersDirectory enabled="false" />
+      <formsDirectory enabled="false" />
+      <layoutsDirectory>
+        <layoutScriptsDirectory>          
+          <layoutScriptFile layoutName="web-default" />
+        </layoutScriptsDirectory>
+      </layoutsDirectory>
+      <modelsDirectory enabled="false" />
+      <modulesDirectory>
+        <moduleDirectory moduleName="default">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="Index">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Error" />
+          </controllersDirectory>
+          <formsDirectory />
+          <modelsDirectory />
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Index">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Error">
+                <viewScriptFile forActionName="error"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
+      </modulesDirectory>
+      <viewsDirectory enabled="false">
+        <viewScriptsDirectory enabled="false" />
+        <viewHelpersDirectory enabled="false" />
+        <viewFiltersDirectory enabled="false" />
+      </viewsDirectory>
+      <bootstrapFile />
+    </applicationDirectory>
+    <dataDirectory>
+      <cacheDirectory enabled="false" />
+      <searchIndexesDirectory enabled="false" />
+      <localesDirectory enabled="false" />
+      <logsDirectory />
+      <sessionsDirectory />
+      <uploadsDirectory enabled="false" />
+    </dataDirectory>
+    <resourcesDirectory />
+    <docsDirectory>
+      <dbDirectory>
+        <derDirectory />
+        <sqlDirectory />
+        <dumpsDirectory />
+      </dbDirectory>
+      <manualDirectory />
+      <scrumDirectory >
+          <umlDirectory />
+          <contentDirectory />
+      </scrumDirectory>      
+      <mockupDirectory />
+      <wireframesDirectory />
+      <flasDirectory />
+      <filesDirectory />
+      <file filesystemName="README.txt" defaultContentCallback="Zend_Tool_Project_Provider_Project::getDefaultReadmeContents"/>
+      <file filesystemName="LICENCIA.txt" />
+    </docsDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false" />
+    </libraryDirectory>
+    <publicDirectory>
+      <uploadsDirectory />
+      <resourcesDirectory />
+      <publicCssDirectory>
+        <ZradDirectory />
+      </publicCssDirectory>
+      <publicScriptsDirectory>
+        <VendorDirectory />        
+      </publicScriptsDirectory>
+      <imgDirectory>
+        <ZradDirectory />
+      </imgDirectory>
+      <publicIndexFile />
+      <htaccessFile />
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false" />
+    <temporaryDirectory enabled="false" />
+    <testsDirectory>
+      <testPHPUnitConfigFile />
+      <testPHPUnitBootstrapFile />
+      <testApplicationDirectory>
+        <testApplicationModulesDirectory>
+          <testApplicationModuleDirectory forModuleName="default">
+            <testApplicationControllerDirectory>
+              
+            </testApplicationControllerDirectory>
+          </testApplicationModuleDirectory>
+        </testApplicationModulesDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory />
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>

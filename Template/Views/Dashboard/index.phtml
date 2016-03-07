@@ -1,0 +1,83 @@
+<?php $this->headLink()->appendStylesheet($this->baseUrl('js/jquery/metro/metro.css')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/jquery/metro/jquery.plugins.min.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/jquery/metro/metro.js')) ?>
+<?php $this->headLink()->appendStylesheet($this->baseUrl('css/zrad/zrad.ui.dashboard.css')) ?>
+<script type="text/javascript">
+<?php $this->headScript()->captureStart() ?>
+
+    $(function() {
+        // Crea la función que actualizará la capa #hora-servidor
+        jClock = function(jDate, jHora, jMin, jSec) { $("#hora-servidor").html(jDate + ', ' + jHora + ':' + jMin + ':' + jSec); }
+ 
+        // Obtiene los valores de la fecha, hora, minutos y segundos del servidor
+        var jDate = '<?php echo $this->sFecha ?>';
+        var jHora = '<?php echo date('H') ?>';
+        var jMin = '<?php echo date('i') ?>';
+        var jSec = '<?php echo date('s') ?>';
+ 
+        // Actualiza la capa #hora-servidor
+        jClock(jDate, jHora,jMin,jSec);
+ 
+        // Crea un intervalo cada 1000ms (1s)
+        var jClockInterval = setInterval(function()
+        {
+            /** Incrementa segundos */
+            jSec++;
+            /** Si el valor de jSec es igual o mayor a 60 */
+            if (jSec >= 60) {
+                /** Incrementa jMin en 1 */
+                jMin++;
+                /** Si el valor de jMin es igual o mayor a 60 */
+                if (jMin >= 60) {
+                    /** Incrementa jHora en 1 */
+                    jHora++;
+                    /** Si el valor de jHora es igual o mayor a 23 */
+                    if (jHora > 23) {
+                        /** Cambia la hora a 00 */
+                        jHora = '00';
+                    }
+ 
+                    /** Si el valor de jHora es menor a 10, le agrega un cero al valor */
+                    else if (jHora < 10) { jHora = '0'+jHora; }
+ 
+                    jMin = '00';
+                } else if (jMin < 10) { jMin = '0'+jMin; }
+ 
+                jSec = '00';
+            } else if (jSec < 10) { jSec = '0'+jSec; }
+ 
+            jClock(jDate, jHora,jMin,jSec);
+        }, 1000);
+    });
+    
+<?php $this->headScript()->captureEnd() ?>
+<?php $this->headStyle()->captureStart() ?>
+body {background-color: #181818 !important;}
+<?php $this->headStyle()->captureEnd() ?>
+</script>
+<div id="zrad-home" class="ui-widget-content ui-corner-all" style="background: none; background-color: #181818; border: 1px solid #181818; height: 100%">    
+    <div class="metro-layout horizontal">
+        <div class="header">
+            <h1>Proyecto / Administrador</h1>
+            <div class="controls">
+                <span class="down" title="Scroll down" style="display: none; ">&nbsp;</span>
+                <span class="up" title="Scroll up" style="display: none; ">&nbsp;</span>
+                <span class="next" title="Scroll left" style="">&nbsp;</span>
+                <span class="prev" title="Scroll right" style="">&nbsp;</span>
+                <span class="toggle-view" title="Toggle layout">&nbsp;</span>
+            </div>
+        </div>
+        <div class="content clearfix">
+            <div class="items isotope" style="width: 1632px; position: relative; overflow: hidden; ">
+                <a class="box width4 isotope-item" style="background-color: #181818; position: absolute; left: 0px; top: 0px;  background-position: initial initial; background-repeat: initial initial; ">
+                    <span>Fecha</span>
+                    <span class="today" id="hora-servidor">&nbsp;</span>
+                </a>             
+                <a class="box isotope-item btnExit" style="background-color: #DF0024; position: absolute; left: 0px; top: 0px; background-position: initial initial; background-repeat: initial initial; ">
+                    <span>Salir</span>
+                    <img class="icon" src="images/zrad/desktop/shutdown.png" alt="" />
+                </a>                
+            </div>
+        </div>
+    </div>
+</div>

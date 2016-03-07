@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <base href="<?php echo $this->ServerUrl($this->baseUrl('/')) ?>" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Administrador de Contenidos</title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="author" href="humans.txt" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">        
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/zrad/zrad.ui.css">
+        
+        <link rel="stylesheet" href="js/vendor/jquery.ui/themes/zrad/jquery-ui-1.10.2.custom.min.css">
+        <link rel="stylesheet" href="js/vendor/jquery.ui/fileinput/fileinput.css">
+        <link rel="stylesheet" href="js/vendor/jquery.ui/jqgrid/css/ui.jqgrid.css">  
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">Estas usando un navegador <strong>desactualizado</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a> o <a href="http://www.google.com/chromeframe/?redirect=true">activa Google Chrome Frame</a> para mejorar tu experiencia.</p>
+        <![endif]-->
+        <div id="zrad-container" class="ui-widget">
+            <div id="zrad-head" class="zrad-ui-block ui-widget-header ui-corner-all">
+                <div id="zrad-head-logo">
+                    <div style="padding-top:10px;padding-left:10px;">PROYECTO</div>
+                </div>
+                <div id="zrad-head-auth">
+                    <div id="zrad-head-role">Administrador General</div>
+                    <div id="zrad-head-options">
+                        <div class="zrad-ui-block-icon">
+                            <span class="ui-icon ui-icon-power">&nbsp;</span>
+                        </div>
+                        <div class="zrad-ui-block-text"><a class="btnExit zrad-btn">Salir</a></div>
+                    </div>
+                </div>
+            </div>
+            <?php $marginBottom = (!empty($this->marginBottom)) ? $this->marginBottom : '' ?>
+            <div id="zrad-menu" class="zrad-ui-block ui-widget-header ui-corner-all" <?php echo $marginBottom ?>>
+                <span id="zrad-buttonset">
+                    <?php echo $this->navigation()->menu()->render() ?>
+                </span>
+            </div>
+            <div id="zrad-content">                
+                <?php echo $this->layout()->content ?>
+            </div>
+            <div id="zrad-footer" class="zrad-ui-block ui-widget-header ui-corner-all ui-widget">
+                Administrador realizado con Zrad
+            </div>
+        </div>
+        <div id="zrad-dialogs">
+            <div id="zrad-dialog" class="zrad-hidden">
+                <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;">&nbsp;</span>
+                <span id="message-dialog">&nbsp;</span>
+            </div>
+        </div>
+        <div id="zrad-project-dialogs">
+            <?php if (isset($this->dialogs)): ?>
+            <?php echo $this->render($this->dialogs) ?>
+            <?php endif ?>
+        </div>
+
+        <script src="js/vendor/jquery-1.10.1.min.js"></script>
+
+        
+        <script type="text/javascript" src="js/vendor/jquery.ui/jquery-ui-1.10.2.custom.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.ui/ui.datepicker-es.js"></script>        
+        
+        <script type="text/javascript" src="js/vendor/jquery.ui/fileinput/jquery.fileinput.min.js"></script>               
+        <script type="text/javascript" src="js/vendor/jquery.ui/jqgrid/i18n/grid.locale-es.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.ui/jqgrid/jquery.jqGrid.min.js"></script>             
+
+        <script type="text/javascript" src="js/vendor/jquery.validate/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/lib/jquery.form.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/lib/jquery.metadata.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/additional-methods-es.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/localization/messages_es.js"></script>                
+
+        <script type="text/javascript" src="js/vendor/zrad/zrad.ui.helper.js"></script>
+        <script type="text/javascript" src="js/vendor/zrad/zrad.helper.js"></script>
+        <script type="text/javascript" src="js/vendor/zrad/zrad.bootstrap.js"></script>
+
+        <script src="js/plugins.js"></script>        
+
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+        <?php echo $this->headStyle() ?>
+
+        <script>
+            
+            var baseUrl = '<?php echo $this->baseUrl() ?>';
+            var id = null;
+            var option = null;
+            
+        </script>
+    </body>
+</html>

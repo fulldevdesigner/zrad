@@ -1,0 +1,176 @@
+<script type="text/javascript">
+<?php $this->headScript()->captureStart() ?>
+
+    var total = <?php echo $this->total ?>;
+
+    function poblarR(r) {
+        $('#panGanId').html('PART ID:' + r.participante_id);
+        $('#panGanNombre').html(r.participante_nombres);
+        $('#panGanDni').html('DNI: ' + r.dni);
+        $('#panGanTelefono').html('Telefono: ' + r.telefono);
+        $('#panGanNacimiento').html('Nacimiento: ' + r.fecha_nacimiento);
+        $('#panGanEmail').html('Email: ' + r.email);
+        $('#panGanCiudad').html('Ciudad: ' + r.ciudad);
+        $('#panGanFbUid').html('Fb Uid: ' + r.fb_uid);
+        //$('#panGanVotos').html('Votos: ' + r.votos);
+        //$('#panGanImagen').attr('src','uploads/rostro/images/' + r.imagen); 
+    }
+
+    $(function() {
+
+        JSCRIPTLIST
+
+        $('#tipo').selectmenu({
+            style: 'dropdown',
+            maxHeight: 150,
+            width: 120
+        });
+
+        $('#btnSearch').click(function() {
+            var params = $('.zrad-ui-search form').zradUIHelper('serializeObject');
+            $('#tblContent').jqGrid('setGridParam', {url: 'admin/sorteo/pagination/', page: 1, postData: params, search: true}).trigger('reloadGrid');
+            return false;
+        });
+
+        $('button#btnSorteo').button({icons: {primary: 'ui-icon-person'}});
+        $('button#btnGanador').button({icons: {primary: 'ui-icon-print'}});
+        $('button#btnDescargarListado').button({icons: {primary: 'ui-icon-arrowstop-1-s'}});
+
+        $('#panGanador').dialog({
+            title: 'GANADOR(A)',
+            modal: false,
+            autoOpen: false,
+            resizable: false,
+            width: 560,
+            minHeight: 200,
+            close: function(event, ui) {
+                $('#panGanUImagen').attr('src', 'images/zrad/transparent-black.png');
+            },
+            buttons: {
+                Ganador: function() {
+
+                    $('#panMessage span').html('Guardando al Ganador(a)...');
+                    $('#panMessage').dialog('open');
+
+                    $.post(baseUrl + '/admin/sorteo/guardar-ganador', function(data) {
+                        $('#panMessage').dialog('close');
+                        if (data == 'ok') {
+                            $('#panMessage span').html('El ganador ha sido guardado');
+                            $('#panMessage').dialog('open');
+                        } else {
+                            $('#panMessage span').html('Error al guardar, intente nuevamente');
+                            $('#panMessage').dialog('open');
+                        }
+                    });
+                },
+                Suplente: function() {
+                    $('#panMessage span').html('Guardando al suplente...');
+                    $('#panMessage').dialog('open');
+
+                    $.post(baseUrl + '/admin/sorteo/guardar-ganador', {'esSuplente': 2}, function(data) {
+                        $('#panMessage').dialog('close');
+                        if (data == 'ok') {
+                            $('#panMessage span').html('El suplente ha sido guardado');
+                            $('#panMessage').dialog('open');
+                        } else {
+                            $('#panMessage span').html('Error al guardar, intente nuevamente');
+                            $('#panMessage').dialog('open');
+                        }
+                    });
+                },
+                Cerrar: function() {
+                    $(this).dialog('close');
+                }
+            }
+        });
+
+        $('#panMessage').dialog({
+            title: 'SORTEO',
+            modal: true,
+            autoOpen: false,
+            resizable: false,
+            width: 400,
+            minHeight: 100,
+            buttons: {
+                Cerrar: function() {
+                    $(this).dialog('close');
+                }
+            }
+        });
+
+        $('#btnGanador').click(function() {
+
+            $.zradUILoader({message: 'Obteniendo al Ultimo Ganador Guardado...'});
+            $.zradUILoader('show');
+
+            $.post(baseUrl + '/admin/sorteo/mostrar-ganador', function(data) {
+                $.zradUILoader('hide');
+                if (typeof data.nombres == 'undefined') {
+                    $('#panMessage span').html('Aun no ha realizado el sorteo');
+                    $('#panMessage').dialog('open');
+                } else {
+                    poblarR(r);
+                    $.zradUILoader('hide');
+                    $('#panGanador').dialog('open');
+                }
+            }, 'json');
+        });
+
+        $('#btnSorteo').click(function() {
+            $.zradUILoader({message: 'Obteniendo al Ganador...'});
+            $.zradUILoader('show');
+            $.post(baseUrl + '/admin/sorteo/obtener-ganador', function(r) {
+                poblarR(r);
+                $.zradUILoader('hide');
+                $('#panGanador').dialog('open');
+            }, 'json');
+        });
+    });
+
+<?php $this->headScript()->captureEnd() ?>
+</script>
+<div class="zrad-ui-title zrad-ui-block ui-widget-header ui-corner-all">
+    <div class="zrad-ui-block-icon">
+        <span class="ui-icon ui-icon-document-b">&nbsp;</span>
+    </div>
+    <div class="zrad-ui-block-text"><?php echo $this->title ?></div>
+</div>
+<div class="zrad-ui-search zrad-ui-block ui-widget-header ui-corner-all">
+    <form action="<?php echo $this->baseUrl('/admin/producto/pagination') ?>" method="post">
+        <div class="zrad-ui-block-linetop">
+            <div class="zrad-ui-section-block" style="padding-right: 10px;">
+                <div class="zrad-ui-block-text">TIPO :&nbsp;</div>
+                <div class="zrad-ui-block-input"><?php echo $this->formSelect('tipo', '1', null, $this->tipos) ?></div>
+            </div>          
+            <div class="zrad-ui-section-block">
+                <button id="btnSearch">FILTRAR</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="zrad-ui-toolbar zrad-ui-block ui-widget-header ui-corner-all">    
+    <button id="btnSorteo">Sortear Ganador</button>
+    <button id="btnGanador">Mostrar Ganador</button>
+    <button id="btnDescargarListado">Descargar Listado</button>    
+</div>
+<table id="tblContent"><tr><td>&nbsp;</td></tr></table>
+<div id="panPagination"></div>
+<div id="panGanador">
+    <div style="overflow: auto; margin-right: 5px; float: left; width: 300px">
+        <span id="panGanId" class="zrad-ui-raffle-itemp"></span>
+        <div class="zrad-ui-raffle-item-tile">GANADOR(A):</div>    
+        <span id="panGanNombres" class="zrad-ui-raffle-itemp"></span>
+        <span id="panGanDni" class="zrad-ui-raffle-item"></span>
+        <span id="panGanTelefono" class="zrad-ui-raffle-item"></span>    
+        <span id="panGanNacimiento" class="zrad-ui-raffle-item"></span>
+        <span id="panGanEmail" class="zrad-ui-raffle-item"></span>        
+        <span id="panGanCiudad" class="zrad-ui-raffle-item"></span>        
+        <span id="panGanFbUid" class="zrad-ui-raffle-item"></span>        
+        <div class="zrad-ui-raffle-item-tile">FOTO:</div>        
+        <span id="panGanVotos" class="zrad-ui-raffle-item"></span>    
+    </div>
+    <div style="overflow: auto;float: left">
+        <img src="images/transparent-black.png" id="panGanImagen" alt="" />
+    </div>
+</div>
+<div id="panMessage"><span>&nbsp;</span></div>

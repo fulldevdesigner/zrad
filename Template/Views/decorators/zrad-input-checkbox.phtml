@@ -1,0 +1,22 @@
+<?php
+$checked = '';
+$value = $this->element->getValue();
+if($value == 1){
+    $checked = 'checked="checked"';
+}
+
+$belongTo = $this->element->getBelongsTo();
+$id = (!empty($belongTo)) ? $belongTo . '-' .  $this->element->getName() : $this->element->getName();
+$name = (!empty($belongTo)) ? $belongTo . '[' .  $this->element->getName() . ']' : $this->element->getName();
+?>
+<div class="zrad-ui-form-element ui-widget-content">
+    <label class="zrad-label"><em><?php if ($this->element->isRequired()): ?>*<?php else: ?>&nbsp;<?php endif ?></em> <?php echo $this->element->getLabel() ?>
+        <span class="zrad-label-small"><?php echo $this->element->getDescription() ?></span>
+    </label>
+    <div class="zrad-input">
+        <input type="checkbox" id="<?php echo $id ?>" name="<?php echo $name ?>" value="1" <?php echo $checked ?> />
+        <?php if ($this->element->hasErrors()): ?>
+        <label for="<?php echo $this->element->getName() ?>" class="zrad-error error" generated="true"><?php echo current($this->element->getMessages()) ?></label>
+        <?php endif ?>
+    </div>
+</div>

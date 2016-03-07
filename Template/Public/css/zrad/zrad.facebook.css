@@ -1,0 +1,74 @@
+body {
+    font: 11pt Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.zrad-albums-facebook{
+    width: 500px;
+    height: 390px;
+}
+
+.zrad-fb-title{
+    line-height:20px;
+    padding: 10px 0 2px 10px;
+    vertical-align: bottom;
+    color: #1C2A47;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.zrad-fb-subtitle{
+    padding: 0 0 5px 10px;
+    display: block;
+    color: #3B5998;
+}
+
+.zrad-fb-subtitle a{
+    cursor: pointer;
+    color: #3B5998;
+    text-decoration: none
+}
+
+.zrad-fb-subtitle span{
+    color: #333333;
+}
+
+.zrad-fb-grilla{
+    height: 330px
+}
+
+.zrad-facebox {
+    font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size:11px;
+    overflow: auto;
+}
+
+.zrad-facebook-photo{
+    padding: 4px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    display: block;
+}
+
+.zrad-facebox-head{
+    background-color:#3B5998;
+    color:#FFF;
+    padding:6px;
+    font-weight: bold;
+}
+
+.paginador { margin: 0; padding: 0; }
+.actual {line-height: 20px;}
+.paginador a { text-decoration: none; color: #0077b2; }
+.paginador p { margin-bottom: 10px;}
+ul.paginador { text-align: center; list-style: none; margin: 20px auto; height: 20px; overflow: hidden; margin: 0; padding: 0; }
+.paginador li { width: 20px; height: 20px; text-align: center; background: #3B5998; color: #fff; font-weight: bold; display: block; float: left; margin-right: 6px; }
+.paginador li a { width: 20px; height: 20px; line-height: 20px; display: block; background: #eaeaea; }
+.paginador li a:hover { background: #3B5998; color: #fff; }
+.paginador li.anterior, .paginador li.siguiente, .paginador li.anterior a, .paginador li.siguiente a { width: 100px; display: block; }
+
+
+.clearfix {
+    display: block;
+}

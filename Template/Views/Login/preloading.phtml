@@ -1,0 +1,33 @@
+<?php $this->headLink()->appendStylesheet($this->baseUrl('js/jquery/metro/metro.css')) ?>
+<script type="text/javascript">
+<?php $this->headScript()->captureStart() ?>
+
+    $(function() {
+    
+        var contador = 10;
+        var hasRedirect = false;
+        
+        setInterval(function(){
+            contador--;
+            if (contador < 0 && !hasRedirect) {
+                hasRedirect = true;
+                redirect(baseUrl + '/admin/login');
+            } else {
+                if (!hasRedirect) {
+                   $('#contador').html(contador);
+                }               
+            }
+            
+        }, 1000);
+
+    });
+    
+<?php $this->headScript()->captureEnd() ?>
+<?php $this->headStyle()->captureStart() ?>
+body {background-color: #181818 !important;}
+<?php $this->headStyle()->captureEnd() ?>
+</script>
+<div id="zrad-login-preloading" class="ui-widget" style="font-family:'OpenSansLight'; color: #fff; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; ; font-size: 0.8em;font-weight:normal !important">
+    <span style="color: #cccccc">Ha pasado mucho tiempo de inactividad</span><br />
+    <span style="font-size: 2.2em">Redirecionando al login en ... </span><span id="contador" style="font-size: 2.2em">10</span>
+</div>

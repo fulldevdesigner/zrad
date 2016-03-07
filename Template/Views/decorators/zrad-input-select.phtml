@@ -1,0 +1,37 @@
+<?php
+$options = $this->element->getMultiOptions();
+$multiOptions = '';
+$i = 1;
+$nOptions = count($options);
+$value = $this->element->getValue();
+foreach($options as $key => $name){
+    $selected = ($value == $key) ? ' selected="selected"' : '';
+    $salto = ($nOptions == $i) ? "" : "\n";
+    $multiOptions .= '<option value="' . $key .'"' . $selected. '>' . $name . '</option>' . $salto;
+    $i++;
+}
+
+$attr = '';
+$attributes = $this->element->getAttribs();
+foreach ($attributes as $attrib => $value) {
+    $attr .= $attrib . '="' . $value . '"';
+}
+
+$belongTo = $this->element->getBelongsTo();
+$id = (!empty($belongTo)) ? $belongTo . '-' .  $this->element->getName() : $this->element->getName();
+$name = (!empty($belongTo)) ? $belongTo . '[' .  $this->element->getName() . ']' : $this->element->getName();
+
+?>
+<div class="zrad-ui-form-element ui-widget-content">
+    <label class="zrad-label"><em><?php if ($this->element->isRequired()): ?>*<?php endif; ?></em> <?php echo $this->element->getLabel() ?>
+        <span class="zrad-label-small"><?php echo $this->element->getDescription() ?></span>
+    </label>
+    <div class="zrad-input">
+        <select <?php echo $attr ?> id="<?php echo $id ?>" name="<?php echo $name ?>">
+            <?php echo $multiOptions ?>
+        </select>
+        <?php if ($this->element->hasErrors()): ?>
+        <label for="<?php echo $id ?>" class="zrad-error error" generated="true"><?php echo current($this->element->getMessages()) ?></label>
+        <?php endif ?>
+    </div>
+</div>

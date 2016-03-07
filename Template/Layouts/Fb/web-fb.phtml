@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+    <head>        
+        <base href="<?php echo $this->ServerUrl($this->baseUrl('/')) ?>" />                
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <title>Zend Rad | Facebook</title>
+        <script type="text/javascript" src="js/jquery/jquery-1.9.1.min.js"></script>   
+        <!-- Modal Facebook -->
+        <link type="text/css" href="css/zrad/zrad.facebook.css" media="screen" rel="stylesheet" />
+		<script type="text/javascript">
+            
+            var baseUrl = '<?php echo $this->baseUrl() ?>';
+            var environment = '<?php echo $this->environment ?>';
+			
+		</script>
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+        <?php echo $this->headStyle() ?>
+    </head>
+    <body>
+        <?php echo $this->layout()->content ?> 
+        <div id="fb-root"></div>
+        <script type="text/javascript">                        
+           
+            if (environment != 'development') {
+            
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId  : '<?php echo $this->fbAppId ?>',
+                        status : true, 
+                        cookie : true,
+                        xfbml  : true,
+                        oauth  : true
+                    });
+                    // Additional initialization code here
+                    FB.Canvas.setSize({ width: 800, height: <?php echo $this->fbCanvasHeight ?> });
+                };
+                (function(d){
+                    var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+                    js = d.createElement('script'); js.id = id; js.async = true;
+                    js.src = "//connect.facebook.net/es_ES/all.js";
+                    d.getElementsByTagName('head')[0].appendChild(js);
+                }(document));
+            
+            }
+                    
+        </script>
+    </body>
+</html>

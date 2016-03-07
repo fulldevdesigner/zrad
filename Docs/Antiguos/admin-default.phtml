@@ -1,0 +1,83 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <base href="<?php echo $this->ServerUrl($this->baseUrl('/')) ?>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Administrador de Contenidos</title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <!-- jQuery -->
+        <script type="text/javascript" src="js/jquery/jquery-1.8.3.min.js"></script>
+        <!-- UI Library -->
+        <link type="text/css" href="js/jquery/ui/themes/zrad/jquery-ui-1.9.2.custom.min.css" media="screen" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery/ui/jquery-ui-1.9.1.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery/ui/ui.datepicker-es.js"></script>
+        <!-- UI Fileinput -->
+        <link type="text/css" href="js/jquery/ui/fileinput/fileinput.css" media="screen" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery/ui/fileinput/jquery.fileinput.min.js"></script>
+        <!-- UI Select -->
+        <script type="text/javascript" src="js/jquery/ui/selectmenu/ui.selectmenu.js"></script>
+        <link type="text/css" href="js/jquery/ui/selectmenu/ui.selectmenu.css" media="screen" rel="stylesheet" />
+        <!-- UI jQgrid -->
+        <script type="text/javascript" src="js/jquery/ui/jqgrid/i18n/grid.locale-es.js"></script>
+        <script type="text/javascript" src="js/jquery/ui/jqgrid/jquery.jqGrid.min.js"></script>
+        <link type="text/css" href="js/jquery/ui/jqgrid/css/ui.jqgrid.css" media="screen" rel="stylesheet" />       
+        <!-- Validate Library -->
+        <script type="text/javascript" src="js/jquery/validate/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/jquery/validate/lib/jquery.form.js"></script>
+        <script type="text/javascript" src="js/jquery/validate/lib/jquery.metadata.js"></script>
+        <script type="text/javascript" src="js/jquery/validate/additional-methods-es.js"></script>
+        <script type="text/javascript" src="js/jquery/validate/localization/messages_es.js"></script>                
+        <!-- Zrad -->
+        <script type="text/javascript" src="js/zrad/zrad.ui.helper.js"></script>
+        <script type="text/javascript" src="js/zrad/zrad.helper.js"></script>
+        <script type="text/javascript" src="js/zrad/zrad.bootstrap.js"></script>
+        <script type="text/javascript" src="js/zrad/zrad.loader.js"></script>
+        <!-- Zrad UI -->
+        <link href="css/zrad/zrad.ui.css" media="screen" rel="stylesheet" type="text/css" />
+        <!-- BaseUrl -->
+        <script type="text/javascript">
+            var baseUrl = '<?php echo $this->baseUrl() ?>';
+            var id = null;
+            var option = null;
+        </script>
+        <!-- Render All -->
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+        <?php echo $this->headStyle() ?>
+    </head>
+    <body>
+        <div id="zrad-container" class="ui-widget">
+            <div id="zrad-head" class="zrad-ui-block ui-widget-header ui-corner-all">
+                <div id="zrad-head-logo">
+                    <div style="padding-top:10px;padding-left:10px;">Proyecto</div>
+                </div>
+                <div id="zrad-head-auth">
+                    <div id="zrad-head-role">Administrador General</div>
+                    <div id="zrad-head-options">
+                        <div class="zrad-ui-block-icon">
+                            <span class="ui-icon ui-icon-power">&nbsp;</span>
+                        </div>
+                        <div class="zrad-ui-block-text"><a class="btnExit zrad-btn">Salir</a></div>
+                    </div>
+                </div>
+            </div>
+            <div id="zrad-content">
+                <div id="zrad-menu" class="zrad-ui-block ui-widget-header ui-corner-all">
+                    <span id="zrad-buttonset">
+                        <?php echo $this->navigation()->menu()->render() ?>
+                    </span>
+                </div>
+                <div id="zrad-main"><?php echo $this->layout()->content ?></div>
+            </div>
+            <div id="zrad-footer" class="zrad-ui-block ui-widget-header ui-corner-all">
+                Administrador de contenidos realizado con Zrad
+            </div>
+        </div>
+        <div id="zrad-dialogs"><?php echo $this->render('elements/admin-dialogs.phtml') ?></div>
+        <div id="zrad-project-dialogs">
+            <?php if (isset($this->dialogs)): ?>
+            <?php echo $this->render($this->dialogs) ?>
+            <?php endif ?>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+/* general */
+body, html {margin: 0;padding: 0;background-color:#fff; height: 100%}
+form {/*display:inline;*/margin-bottom:0;}
+@font-face {font-family: 'OpenSansLight'; src: url('fonts/opensans-light-webfont.eot'); src: url('fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-light-webfont.woff') format('woff'), url('fonts/opensans-light-webfont.ttf') format('truetype'), url('fonts/opensans-light-webfont.svg#OpenSansLight') format('svg'); font-weight: lighter; font-style: normal;}
+a{outline:0;}
+/* jquery ui - reset*/
+.ui-dialog .ui-dialog-buttonpane button {padding: 0}
+.ui-widget {font-size: 0.7em}
+.ui-progressbar-value {background-image: url("../../img/zrad/pbar-ani.gif");}
+/* zrad ui - login */
+#zrad-login-container {position: absolute;left: 50%;top: 50%;width: 580px;height:auto;margin-top: -140px;margin-left: -290px;overflow: auto;}
+#zrad-login-preloading {position: absolute;left: 50%;top: 50%;width: 440px;height:auto;margin-top: -50px; margin-left: -220px;overflow: auto;}
+#zrad-login-content {overflow:auto;}
+.zrad-login-subcontent {padding:10px;overflow:auto;}
+#zrad-login-left {float:left;overflow:auto;margin-right: 10px}
+#zrad-login-logo {width: 130px;height: 100px;position:relative;text-align:center;}
+#zrad-login-right {width:392px;float:left;/*padding-left:10px;border-right-style:none;border-top-style:none;border-bottom-style:none;background-image:none;background-color:transparent;*/}
+.zrad-ui-login-title {margin-bottom:5px;overflow:auto;width: auto}
+.zrad-ui-login-error{padding:5px;overflow: auto;margin-bottom:5px;width:auto;}
+.zrad-ui-login-error ol{margin: 0;padding: 0;}
+.zrad-ui-login-error li{list-style: none;overflow: auto;margin-bottom: 3px;}
+.zrad-ui-login-error li span{float: left;}
+.zrad-ui-login-error li label{display:inline;text-align:left;float:left;}
+.zrad-ui-login-input{width:258px;height:22px;float:right;margin:0 0 0 10px;}
+.zrad-ui-login-label{display:block;text-align:right;float:left;width:120px;}
+.zrad-ui-login-label-small{display:block;font-size:10px;font-weight:normal;text-align:right;width:118px}
+#zrad-login-failed, #zrad-login-success, #zrad-login-error, #zrad-dialog, #zrad-loader{display: none;}
+/* zrad ui - form */
+.zrad-ui-form {padding: 10px;min-height: 450px}
+.zrad-ui-form fieldset legend,fieldset legend{font-weight:bold;padding: 0.5em;margin: 0px;}
+.zrad-ui-form h1{color:#3fb1ec !important;font-size:18px;font-weight:bold;margin:10px 0;margin:0}
+.zrad-ui-form-element{padding:7px 0 2px 0;/*border-bottom: 1px solid #4F4848;*/border-right-style :none;border-top-style: none;border-left-style: none; background: none; overflow: auto; overflow-x:hidden;overflow-y:hidden;height: auto!important; /* para los browsers buenos */height: 45px; /* para IE5+ */min-height:45px; /* para los browsers buenos */}
+.zrad-label{display:block;font-weight: bold; text-align: right;width: 120px;float: left; margin-right: 10px; height: auto!important;height: 50px;  /* para IE5+ */min-height:50px; /* para los browsers buenos */}
+.zrad-label-small{color:#666666;display:block;font-size:10px;font-weight:normal;text-align:right;width:auto;}
+.zrad-input{width:260px;height:auto;float:left;}
+.zrad-input label.error{display:inline-block;color:orange;font-size: 10px; display: -moz-inline-block;width: 250px}
+.zrad-textarea{width:260px;height:100px;float:left;}
+.zrad-textarea label.error{display:block;color:orange;}
+.zrad-ui-form input[type='text'] {height:20px;width:254px;padding:2px;float:left /* bug IE7 para no generar: margin top bottom 1px*/;clear: right;display: block}
+.zrad-ui-form input[type='password'] {height:20px;width:254px;padding:2px;float:left /* bug IE7 para no generar: margin top bottom 1px*/;clear: right;display: block}
+.zrad-input-number {height:20px;width:100px!important;padding:2px;float:left /* bug IE7 para no generar: margin top bottom 1px*/;clear: right;display: block}
+.zrad-ui-form textarea {height:80px;width:254px;resize:none;padding:2px;float:left /* bug IE7 para no generar: margin top bottom 1px*/;clear: right;display: block}
+/* zrad ui - file */
+.zrad-subinput{overflow: auto; margin-top: 2px}
+.zrad-subinput-label{display:block; text-align: right;width: 100px;float: left; margin-right: 10px; height: auto!important;height: 28px;  /* para IE5+ */min-height:28px; /* para los browsers buenos */}
+.zrad-complete-image{display: none}
+/* zrad ui - general errors */
+.zrad-ui-form-error{padding:5px;overflow:auto;margin:5px 0;width:auto;}
+.zrad-ui-form-error ol{margin:0;padding:0;}
+.zrad-ui-form-error li{list-style:none;overflow:auto;}
+.zrad-ui-form-error li span{float:left;}
+.zrad-ui-form-error label{display:inline;text-align:left;float: left;}
+/* zrad ui - captcha */
+.zrad-captcha-message {height:20px;display:block;}
+.zrad-captcha-image {width:126px;height:50px;padding:0 10px 18px 0;float:left;}
+.zrad-captcha-error {width:106px;float:left;}
+/* layouts */
+#zrad-container{margin: 0; height: auto}
+#zrad-head{width:auto; height: 42px;}
+#zrad-head-logo{width:164px;height:40px;float:left;}
+#zrad-head-auth{width:370px;height:40px;float:left;margin-left:10px;}
+#zrad-head-role{width:370px;padding-top:5px;height:15px;}
+#zrad-head-options{width:370px;height:20px;}
+#zrad-content{width: auto;height: auto; margin-bottom: 1px}
+#zrad-menu, .zrad-menu{width:auto;height: auto!important; /* para los browsers buenos */height: 26px; /* para IE5+ */min-height: 26px; /* para los browsers buenos */margin-bottom: 1px;}
+#zrad-main{width:auto;}
+#zrad-home{width: auto;padding: 10px;}
+#zrad-footer{width:auto; height: 25px;}
+.zrad-ui-section-main {padding: 10px;}
+.zrad-ui-block{padding:4px;overflow: auto;}
+.zrad-ui-wtotal-fixed{width: 940px !important;}
+.zrad-ui-block-icon{float: left;width: auto;padding: 2px 0 2px 0;}
+.zrad-btn{cursor: pointer;}
+.zrad-ui-block-text{float: left;width: auto;padding: 5px 5px 2px 2px;}
+.zrad-ui-section{margin-bottom: 10px;overflow: auto;width: auto;height: auto;}
+.zrad-ui-section-block{width: auto;float: left;}
+.zrad-ui-separator-vertical{width: 10px;height: 20px;float: left;}
+.zrad-ui-separator-horizontal{height: 10px; width: auto}
+.zrad-ui-title{margin-bottom: 2px;width: auto;height: 25px;margin-bottom: 1px;}
+.zrad-ui-toolbar{width:auto;min-height:28px;height: auto!important; /* para los browsers buenos */height:28px; /* para IE5+ */min-height:28px;/* para los browsers buenos */}
+.zrad-ui-block-linetop{width: auto;height: 32px; padding-top: 8px;}
+.zrad-ui-search{height: auto!important; /* para los browsers buenos */height: 42px; /* para IE5+ */min-height: 42px; /* para los browsers buenos */margin-bottom: 1px;}
+.zrad-ui-section-block fieldset{padding: 0 10px 10px 10px;}
+.zrad-ui-block-input{float: left;width: auto;}
+/* zrad ui - helpers */
+.dlgImage {display: none}
+.panImage {position: relative; width: 10px; height: 10px; overflow: hidden}
+/* zrad ui - sorteo */
+.zrad-ui-raffle-item {margin-bottom: 5px;display: block}
+.zrad-ui-raffle-itemp {font-size: 13px; font-weight: bold; margin-bottom: 10px; display: block}
+.zrad-ui-raffle-item-tile {margin: 10px 0 10px 0; font-weight: bold; font-size: 14px;}
+.zrad-hidden {display: none}

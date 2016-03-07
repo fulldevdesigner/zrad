@@ -1,0 +1,25 @@
+Copyright (c) 2011-2013 Zrad Peru - www.zend-rad.com
+Todos los derechos reservados.
+
+La redistribución y el uso, sin modificación,
+están permitidos siempre que se cumplan los siguientes requisitos:
+
+     * Las redistribuciones del codigo fuente deben conservar el aviso de copyright,
+       esta lista de condiciones y el siguiente descargo de responsabilidad.
+
+     * En las creaciones de proyectos creados con Zrad deben reproducir el aviso de copyright.
+       ademas de acreditar el desarrollo a Zrad
+
+     * El nombre de Zrad Peru. y el nombre de su creador (Juan Minaya Leon - info@juanminaya.com) 
+       pueden usarse para apoyar o promocionar productos derivados de este
+       software con permiso previo y por correo.
+
+ESTE SOFTWARE ES PROPORCIONADO POR LOS PROPIETARIOS DEL COPYRIGHT JUAN MINAYA LEON
+NO OFRECE NINGUNA GARANTÍA EXPRESA O IMPLÍCITAS TAMPOCO DE MANTENIMIENTO. 
+EN NINGÚN CASO EL PROPIETARIO DEL COPYRIGHT SERÁN RESPONSABLES POR
+DAÑOS DIRECTOS, INDIRECTOS, INCIDENTAL, ESPECIAL, EJEMPLAR O CONSECUENTE
+(INCLUYENDO, PERO NO LIMITADO A, LA ADQUISICIÓN DE BIENES O SERVICIOS;
+PÉRDIDA DE USO, DE DATOS O DE BENEFICIOS, O INTERRUPCIÓN DE NEGOCIO) CAUSADOS COMO EN
+CUALQUIER TEORÍA DE RESPONSABILIDAD, YA SEA POR CONTRATO, RESPONSABILIDAD ESTRICTA O AGRAVIO
+(INCLUYENDO NEGLIGENCIA O DE OTRA MANERA) QUE SURJA DE CUALQUIER MANERA DEL USO DE ESTE
+SOFTWARE, INCLUSO SI SE HA ADVERTIDO DE LA POSIBILIDAD DE TALES DAÑOS.

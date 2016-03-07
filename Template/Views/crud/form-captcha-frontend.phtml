@@ -1,0 +1,67 @@
+<?php $this->headLink()->appendStylesheet('js/vendor/jquery.ui/themes/zrad/jquery-ui-1.10.2.custom.min.css') ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.ui/jquery-ui-1.10.2.custom.min.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.ui/ui.datepicker-es.js')) ?>
+<?php $this->headLink()->appendStylesheet('css/zrad/zrad.fileinput.css') ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.ui/fileinput/jquery.fileinput.min.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.validate/jquery.validate.min.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.validate/lib/jquery.form.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.validate/lib/jquery.metadata.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.validate/lib/jquery.metadata.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.validate/additional-methods-es.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/jquery.validate/localization/messages_es.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/zrad/zrad.ui.helper.js')) ?>
+<?php $this->headScript()->appendFile($this->baseUrl('js/vendor/zrad/zrad.helper.js')) ?>
+<?php $this->headLink()->appendStylesheet('css/zrad/zrad.website.css') ?>
+<?php $this->headLink()->appendStylesheet('css/zrad/zrad.home.css') ?>
+%FORMJSCRIPT%
+<div id="container">
+    <div id="content_top"></div>
+    <div class="content"> 
+        <div class="zrad-ui-form">
+          <h1>Formulario</h1>
+          <?php if(count($this->form->getErrorMessages()) > 0) : ?>
+          <div class="zrad-ui-form-error ui-state-error ui-corner-all">
+            <div style="margin-bottom: 3px;"><strong>Se han encontrado los siguientes Errores:</strong></div>
+            <ol>
+                <?php foreach($this->form->getErrorMessages() as $message): ?>
+                <li><span class="ui-span ui-icon ui-icon-close">&nbsp;</span><label class="error"><?php echo $message ?></label></li>
+                <?php endforeach ?>
+            </ol>
+          </div>
+          <?php endif ?>
+          <form id="%IDFORM%" action="%MODULE%/%CONTROLLER%/%ACTION%" method="post" enctype="multipart/form-data">
+            <div class="zrad-ui-section">
+              <div class="zrad-ui-section-block">
+        %FORMCONTENT%
+                <div class="zrad-ui-form-element">
+                  <label class="zrad-label"><em>*</em> Verificación de Palabra
+                    <span class="zrad-label-small">No se distingue entre mayúsculas y minúsculas.</span>
+                  </label>
+                  <div class="zrad-input">
+                    <div class="zrad-captcha-message">Ingrese los caracteres que logra ver en la imagen:</div>
+                    <div class="zrad-captcha-image">
+                      <img src="<?php echo 'resources/captcha/images/' . $this->captcha ?>.png" alt="" />
+                    </div>
+                    <div class="zrad-captcha-error">
+                      <?php echo $this->form->getElement('verificacion') ?>
+                      <?php if ($this->form->getElement('verificacion')->hasErrors()): ?>
+                      <label class="zrad-error error" for="verificacion"><?php echo current($this->form->getElement('verificacion')->getMessages()) ?></label>
+                      <?php else: ?>
+                      <label class="zrad-error error" for="verificacion">&nbsp;</label>
+                      <?php endif ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="zrad-ui-form-element">
+                  <label class="zrad-label">&nbsp;</label>
+                  <div class="zrad-input">
+                    <button type="submit">&nbsp;</button>
+                  </div>
+                </div>
+              </div>
+            </div>    
+          </form>
+        </div>
+    </div>
+    <div id="content_end"></div>
+</div>

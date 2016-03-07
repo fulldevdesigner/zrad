@@ -1,0 +1,35 @@
+%JSCRIPT%
+<div id="ui-title" class="ui-block ui-widget-header ui-corner-all">
+    <div class="ui-block-icon">
+        <span class="ui-icon ui-icon-document-b">&nbsp;</span>
+    </div>
+    <div class="ui-block-text"><?php echo $this->title; ?></div>
+</div>
+<div id="toolbar" class="ui-block ui-widget-header ui-corner-all">
+    <button type="button" id="back_btn">Regresar</button>
+</div>
+<div id="section" class="ui-widget-content ui-corner-all">
+    <form id="%FORMNAME%" action="%MODULE%/%CONTROLLER%/new/" method="post" enctype="multipart/form-data">
+        <?php if(isset($this->_error)): ?>
+        <div class="error-container ui-state-error ui-corner-all">
+            <div style="margin-bottom: 3px;"><strong>Se han encontrado los siguientes Errores:</strong></div>
+            <ol>
+                <li><span class="ui-span ui-icon ui-icon-close">&nbsp;</span><label class="ui-state-error" style="border:none;background:none;"><?php echo $this->_error ?></label></li>
+            </ol>
+        </div>
+        <?php endif ?>
+        <div class="ui-section">            
+            <div class="ui-block-container" style="width: 420px;">
+                <fieldset class="ui-widget ui-widget-content ui-corner-all">
+                    <legend class="ui-widget ui-widget-header ui-corner-all">DETALLE</legend>
+                    %FORMCONTENT%
+                </fieldset>
+            </div>
+        </div>
+        <div>
+            <p>
+                <button class="save" type="submit">Guardar</button>
+            </p>
+        </div>
+    </form>
+</div>

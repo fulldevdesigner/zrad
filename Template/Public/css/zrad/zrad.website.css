@@ -1,0 +1,32 @@
+/* general */
+/*body {font:11px Arial,Helvetica,sans-serif;color:#999999;background:#272727;padding:0;margin:0}*/
+form {display:inline;margin-bottom:0;}
+.ui-widget{font-size: 11px;}
+/* zrad form */
+.zrad-loader-ui, dlgRegistro{display: none}
+.zrad-ui-form {margin:20px;}
+.zrad-ui-form h1{color:#3fb1ec !important;font-size:18px;font-weight:bold;margin:10px 0;margin:0}
+.zrad-ui-form-element{padding:7px 0 2px 0;border-bottom: 1px solid #999999;overflow:auto; overflow-x:hidden;overflow-y:hidden;height: auto!important; /* para los browsers buenos */height: 45px; /* para IE5+ */min-height:45px; /* para los browsers buenos */}
+.zrad-label{display:block;font-weight: bold; text-align: right;width: 120px;float: left; margin-right: 10px; height: auto!important;height: 50px;  /* para IE5+ */min-height:40px; /* para los browsers buenos */}
+.zrad-label-small{color:#666666;display:block;font-size:10px;font-weight:normal;text-align:right;width:auto;}
+.zrad-input{width:260px;height:auto;float:left;font-size: 11px}
+.zrad-input label.error{display:block;color:orange;}
+.zrad-textarea{width:260px;height:100px;float:left;}
+.zrad-textarea label.error{display:block;color:orange;}
+.zrad-ui-form input[type='text'] {color: #666666;font:11px Arial,Helvetica,sans-serif;height:20px;width:254px;border:0;padding:2px;float:left /* bug IE7 para no generar: margin top bottom 1px*/;clear: right;display: block}
+.zrad-ui-form textarea {color: #666666;font:11px Arial,Helvetica,sans-serif;height:80px;width:254px;border:0;padding:2px;float:left /* bug IE7 para no generar: margin top bottom 1px*/;clear: right;display: block}
+.zrad-ui-form button {width: 102px;height: 30px;cursor: pointer;background: url("../../img/zrad/zrad.registrar.gif") no-repeat scroll 0 0 transparent;border: none;}
+/* general errors */
+.zrad-ui-form-error{padding:5px;overflow:auto;margin:5px 0;width:auto;}
+.zrad-ui-form-error ol{margin:0;padding: 0;}
+.zrad-ui-form-error li{list-style:none;overflow:auto;}
+.zrad-ui-form-error li span{float:left;}
+.zrad-ui-form-error label{display:inline;text-align:left;float: left;}
+/* captcha */
+.zrad-captcha-message {height:20px;display:block;}
+.zrad-captcha-image {width:126px;height:50px;padding:0 10px 18px 0;float:left;}
+.zrad-captcha-error {width:106px;float:left;}
+/* layouts */
+.zrad-ui-section{margin-bottom: 10px;overflow: auto;width: auto;height: auto;}
+.zrad-ui-section-block{width: auto;float: left;}
+.zrad-ui-separator-vertical{width: 10px;height: 20px;float: left;}

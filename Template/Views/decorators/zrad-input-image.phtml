@@ -1,0 +1,67 @@
+<?php
+$attributesWhiteList = array('class');
+$attr = '';
+$attributes = $this->element->getAttribs();
+foreach ($attributes as $attrib => $value) {
+    if (!in_array($attrib, $attributesWhiteList)) {
+        unset($attributes[$attrib]);
+    } else {
+        $attr .= $attrib . '="' . $value . '"';
+    }
+}
+$borderBottom = '';
+//$borderBottom = ($this->element->isDelete()) ? 'style="border-bottom-style: none;"' : '';
+?>
+<div class="zrad-ui-form-element ui-widget-content" <?php echo $borderBottom ?>>
+    <label class="zrad-label"><em><?php if ($this->element->isRequired()): ?>*<?php else: ?>&nbsp;<?php endif ?></em> <?php echo $this->element->getLabel() ?>
+        <span class="zrad-label-small"><?php echo $this->element->getDescription() ?></span>
+    </label>
+    <div class="zrad-input">
+        <input type="file" id="<?php echo $this->element->getName() ?>" name="<?php echo $this->element->getName() ?>"  />
+        <?php if ($this->element->hasErrors()): ?>
+        <label for="<?php echo $this->element->getName() ?>" class="zrad-error error" generated="true"><?php echo current($this->element->getMessages()) ?></label>
+        <?php endif ?>
+        <?php $value = $this->element->getFileValue() ?>
+        <?php $filename = $this->element->getDestination() . '/' . $value ?>
+        <?php if (!empty($value) && file_exists($filename)): ?>
+        <?php $result = $this->element->getCurrentDimensions() ?>
+        <div class="zrad-subinput">
+            <label class="zrad-subinput-label">Imagen actual</label>
+            <button type="button" id="<?php echo 'btn' . ucfirst($this->element->getName()) ?>" >Abrir imagen</button>
+        </div>
+        <?php if ($this->element->isDelete() && !empty($value)): ?>
+        <div class="zrad-subinput">
+            <label class="zrad-subinput-label">Eliminar actual</label>
+            <input type="checkbox" name="chk<?php echo ucfirst($this->element->getName()) ?>" value="1" />
+        </div>
+        <?php endif ?>
+        <div class="zrad-complete-image" id="<?php echo 'dlg' . ucfirst($this->element->getName()) ?>">
+            <img src="<?php echo $this->baseUrl('/uploads/' . $this->element->getEntity() . '/images/' . $this->element->getSubPath() . $value) ?>" alt="" />
+        </div>
+        <?php endif ?>
+    </div>    
+    <script type="text/javascript">
+        
+        $(function() {
+
+            $('#<?php echo $this->element->getName() ?>').fileinput({
+                buttonText: 'Examinar'
+            });
+
+            <?php if (!empty($value) && file_exists($filename)): ?>            
+            $('#<?php echo 'btn' . ucfirst($this->element->getName()) ?>').click(function(){
+                $('#zrad-main').zradUIHelper({
+                    container : $('<?php echo '#dlg' . ucfirst($this->element->getName()) ?>'),
+                    width : <?php echo $result['width'] ?>,
+                    height : <?php echo $result['height'] ?>
+                });
+                $('#zrad-main').zradUIHelper('showImage');
+            });
+
+            $('#<?php echo 'btn' . ucfirst($this->element->getName()) ?>').button({
+                icons: { primary: 'ui-icon-image'}
+            });
+            <?php endif ?>
+        });
+    </script>
+</div>

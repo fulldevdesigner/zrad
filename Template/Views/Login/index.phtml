@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <base href="<?php echo $this->ServerUrl($this->baseUrl('/')) ?>" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Administrador de Contenidos</title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="author" href="humans.txt" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width"> 
+                
+        <link href="js/vendor/jquery.ui/themes/zrad/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/zrad/zrad.ui.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <style>
+            body {background-color: #181818 !important;}
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">Estas usando un navegador <strong>desactualizado</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a> o <a href="http://www.google.com/chromeframe/?redirect=true">activa Google Chrome Frame</a> para mejorar tu experiencia.</p>
+        <![endif]-->
+        <div id="zrad-login-container" class="ui-widget">
+            <div id="zrad-login-content">
+                <div id="zrad-login-left" class="ui-widget-content zrad-login-subcontent" style="border: 1px solid #fff">
+                    <div id="zrad-login-logo">
+                        <img src="img/zrad/logo.jpg" class="ui-widget-content" style="border: 1px solid #fff" alt=""/>
+                    </div>
+                </div>
+                <div id="zrad-login-right" class="ui-widget-content zrad-login-subcontent" style="border: 1px solid #fff">
+                    <div class="zrad-ui-login-title ui-widget-header ui-corner-all">
+                        <div style="float: left"><img src="img/zrad/desktop/login.png" alt="login" /></div>
+                        <div style="float: left; padding:  20px 0 0 10px;font-family:'OpenSansLight'; color: #fff; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; ; font-size: 2.2em; line-height: 1em; font-weight:normal !important">Proyecto</div>
+                    </div>
+                    <div id="zrad-login-error" class="zrad-ui-login-error ui-state-error ui-corner-all">
+                        <div style="margin-bottom: 3px;"><strong>Se han encontrado los siguientes Errores:</strong></div>
+                        <ol>
+                            <li><span class="ui-span ui-icon ui-icon-close">&nbsp;</span><label for="username" class="error">Ingrese su Usuario</label></li>
+                            <li><span class="ui-span ui-icon ui-icon-close">&nbsp;</span><label for="password" class="error">Ingresa su Clave</label></li>
+                        </ol>
+                    </div>
+                    <div id="zrad-login-failed" class="zrad-ui-login-error ui-state-error ui-corner-all">
+                        <div style="margin-bottom: 3px;"><strong>Se han encontrado los siguientes Errores:</strong></div>
+                        <ol>
+                            <li><span class="ui-span ui-icon ui-icon-close">&nbsp;</span><span class="message">&nbsp;</span></li>
+                        </ol>
+                    </div>
+                    <div id="zrad-login-success" class="zrad-ui-login-error ui-state-highlight ui-corner-all">
+                        <div style="margin-bottom: 3px;"><strong>Bienvenido</strong></div>
+                        <ol>
+                            <li><span class="ui-span ui-icon ui-icon-flag">&nbsp;</span><span  class="message">&nbsp;</span></li>
+                        </ol>
+                    </div>
+                    <form method="post" id="formLogin" action="admin/login/authenticate">
+                        <div class="zrad-ui-form-element ui-widget-content" style="min-height: 30px; border-bottom-style: none">
+                            <label class="zrad-ui-login-label"><em>&nbsp;</em> Usuario
+                                <span class="zrad-ui-login-label-small">&nbsp;</span>
+                            </label>
+                            <input type="text" name="username" id="username" value="<?php echo $this->values[0] ?>" class="zrad-ui-login-input ui-widget-content ui-corner-all" maxlength="15" />
+                        </div>
+                        <div class="zrad-ui-form-element ui-widget-content" style="min-height: 30px; border-bottom-style: none">
+                            <label class="zrad-ui-login-label"><em>&nbsp;</em> Contraseña
+                                <span class="zrad-ui-login-label-small">&nbsp;</span>
+                            </label>
+                            <input type="password" name="password" id="password" value="<?php echo $this->values[1] ?>" class="zrad-ui-login-input ui-widget-content ui-corner-all" maxlength="15" />
+                        </div>
+                        <div class="zrad-ui-form-element ui-widget-content" style="min-height: 30px; border-bottom-style: none">                    
+                            <div style="float: left; margin: 0 10px 0 132px"><input type="checkbox" name="save" id="save" value="1" <?php echo $this->values[2] ?> /></div>
+                            <div style="float: left">Recordar contraseña</div>
+                        </div>
+                        <div class="zrad-ui-form-element ui-widget-content" style="min-height: 20px; border-bottom-style: none; padding: 0 10px 0 132px">                    
+                            <a href="mailto:jminaya@emotionla.com" style="color: #0893D8; text-decoration: none">¿No puedes acceder a tu cuenta?</a>
+                        </div>
+                        <div class="zrad-ui-form-element" style="min-height: 32px">
+                            <button id="btnIngresar" type="submit" style="margin-left:130px; font-size: 1.1em">Iniciar Sesión</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>      
+
+        <script src="js/vendor/jquery-1.10.1.min.js"></script>        
+        <script type="text/javascript" src="js/vendor/jquery.ui/jquery-ui-1.10.2.custom.min.js"></script>                              
+
+        <script type="text/javascript" src="js/vendor/jquery.validate/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/lib/jquery.form.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/lib/jquery.metadata.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/additional-methods-es.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.validate/localization/messages_es.js"></script>                
+        
+        <script type="text/javascript" src="js/vendor/zrad/zrad.helper.js"></script>              
+
+        <script>
+                                 
+            $(function() {        
+        
+                $.validator.setDefaults({
+                    highlight: function(input) {
+                        $(input).addClass("ui-state-highlight");
+                    },
+                    unhighlight: function(input) {
+                        $(input).removeClass("ui-state-highlight");
+                    }
+                });
+
+                $('input').focus(function () {
+                    $(this).addClass('ui-state-hover');
+                });
+
+                $('input').focusout(function () {
+                    $(this).removeClass('ui-state-hover');
+                });
+
+                var container = $('#zrad-login-error');
+                $('#formLogin').validate({
+                    errorContainer: container,
+                    errorLabelContainer: $('ol', container),
+                    wrapper: 'li',
+                    meta: 'validate',
+                    rules:{
+                        username:{
+                            required:true,
+                            minlength: 3
+                        },
+                        password:{
+                            required:true,
+                            minlength:3
+                        }
+                    },
+                    submitHandler:function(form){
+                        $('#zrad-login-failed').hide();
+                        $('button#btnIngresar').button('option', 'disabled', true);
+                        $(form).ajaxSubmit({
+                            dataType: 'json',
+                            success: function(r) {                        
+                                $('.message').html(r.info);
+                                if(r.state){
+                                    $('#zrad-login-ok').show();
+                                    redirect('admin/dashboard');
+                                }else{
+                                    $('#zrad-login-failed').show();
+                                    $('button#btnIngresar').button('option', 'disabled', false);
+                                }
+                            }
+                        });
+                    },
+                    onfocusin:function(){
+                        $('#zrad-login-failed').hide();
+                    }
+                });
+        
+                $('button#btnIngresar').button();
+
+            });
+            
+        </script>
+    </body>
+</html>

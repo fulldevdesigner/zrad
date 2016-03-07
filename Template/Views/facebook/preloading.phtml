@@ -1,0 +1,33 @@
+<?php $this->headScript()->appendFile('js/zrad/zrad.helper.js') ?>
+<?php $this->headStyle()->captureStart() ?>
+#zrad-login-preloading {position: absolute;left: 50%;top: 50%;width: 440px;height:auto;margin-top: -50px; margin-left: -220px;overflow: auto;}
+<?php $this->headStyle()->captureEnd() ?>
+<script type="text/javascript">
+<?php $this->headScript()->captureStart() ?>
+
+    $(function() {
+    
+        var contador = 6;
+        var hasRedirect = false;
+        
+        setInterval(function() {
+            contador--;
+            if (contador < 0 && !hasRedirect) {
+                hasRedirect = true;
+                redirect(baseUrl + '/');                
+            } else {
+                if (!hasRedirect) {
+                   $('#contador').html(contador); 
+                }                
+            }
+            
+        }, 1000);
+
+    });
+    
+<?php $this->headScript()->captureEnd() ?>
+</script>
+<div id="zrad-login-preloading" class="ui-widget" style="color: #27A7E6; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%">
+    <span style="color: #0266A4; font-weight:normal !important; font-size: 1em;">Ha pasado mucho tiempo de inactividad</span><br />
+    <span style="font-size: 1.7em;font-weight:bold">Redirecionando a la página principal ... </span><span id="contador" style="font-size: 1.7em;font-weight:bold">6</span>
+</div>

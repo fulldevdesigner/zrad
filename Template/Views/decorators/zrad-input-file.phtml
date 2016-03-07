@@ -1,0 +1,53 @@
+<?php
+$attributesWhiteList = array('class');
+$attr = '';
+$attributes = $this->element->getAttribs();
+foreach ($attributes as $attrib => $value) {
+    if (!in_array($attrib, $attributesWhiteList)) {
+        unset($attributes[$attrib]);
+    } else {
+        $attr .= $attrib . '="' . $value . '"';
+    }
+}
+?>
+<div class="zrad-ui-form-element ui-widget-content">
+    <label class="zrad-label"><em><?php if ($this->element->isRequired()): ?>*<?php endif; ?></em> <?php echo $this->element->getLabel() ?>
+        <span class="zrad-label-small"><?php echo $this->element->getDescription() ?></span>
+    </label>
+    <div class="zrad-input">
+        <input type="file" id="<?php echo $this->element->getName() ?>" name="<?php echo $this->element->getName() ?>" />
+        <?php if ($this->element->hasErrors()): ?>
+        <label for="<?php echo $this->element->getName() ?>" class="zrad-error error" generated="true"><?php echo current($this->element->getMessages()) ?></label>
+        <?php endif ?>
+        <?php $value = $this->element->getFileValue() ?>
+        <?php $entity = $this->element->getEntity() ?>
+        <?php if (!empty($value)): ?>
+        <div class="zrad-subinput">
+            <label class="zrad-subinput-label">Archivo actual</label>
+            <a href="<?php echo $this->baseUrl('/admin/multimedia/download/file/' . $value . '/entity/' . $entity) ?>" id="<?php echo 'btn' . ucfirst($this->element->getName()) ?>" target="_blank">Descargar</a>
+        </div>
+        <?php if ($this->element->isDelete() && !empty($value)): ?>
+        <div class="zrad-subinput">
+            <label class="zrad-subinput-label">Eliminar actual</label>
+            <input type="checkbox" name="chk<?php echo ucfirst($this->element->getName()) ?>" value="1" />
+        </div>
+        <?php endif ?>
+        <?php endif ?>        
+    </div>
+    <script type="text/javascript">
+        
+        $(function() {
+            
+            $('#<?php echo $this->element->getName() ?>').fileinput({
+                buttonText: 'Examinar'
+            });
+            
+            <?php if (!empty($value)): ?>
+            $('#<?php echo 'btn' . ucfirst($this->element->getName()) ?>').button({
+                icons: { primary: 'ui-icon-arrowstop-1-s'}
+            });
+            <?php endif ?>
+            
+        });
+    </script>
+</div>
