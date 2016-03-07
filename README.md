@@ -6,7 +6,7 @@ Zrad tiene como principal objetivo automatizar la creación y actualización de 
 
 **"Disminuir 70% de tiempo en desarrollo"**
 
-Para lograr ese objetivo se apoya de **Zend Framework** y su herramienta CLI para crear diversos componentes. Para ver tutoriales y videos visite la web de [www.zend-rad.com](https://www.zend-rad.com/).
+Para lograr ese objetivo se apoya de **Zend Framework** y su herramienta CLI para crear diversos componentes. Para ver tutoriales y videos visite la web de [www.zend-rad.com](https://www.zend-rad.com/)
 
 ## Funciones
 
@@ -39,7 +39,7 @@ NetBeans IDE es uno de los proyectos de Oracle que apoya continuamente a la comu
 Zrad Aid es una librería de complemento para tus proyectos con Zend Framework esta librería contiene clases de ayuda para todos tu componentes Zend como: elementos, filtros y validaciones, procesamiento de imágenes, procesamiento PDF personalizados (margin, padding, texto multilínea, etc.), Helpers para manejo de Cadenas (UTF8, Tildes, Ñs y más) y manejo de Fechas.
 Para más información visita [ZradAid](https://github.com/minayaleon/zrad-aid)
 
-## Intalación
+## Instalación
 
 Requerimientos:
 
