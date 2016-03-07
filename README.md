@@ -7,7 +7,7 @@ Zrad tiene como principal objetivo automatizar la creación y actualización de 
 
 ## Funciones
 
-1. Automatización de procesos base (CRUD)
+### Automatización de procesos base (CRUD)
 
 Zrad contiene una serie de comando que te ayudan a automatizar varios procesos: desde crear la arquitectura base de un proyecto Zend Framework hasta la creacion de los modelos, backends, frontends y módulos Facebook. Funciones:
 
@@ -23,15 +23,15 @@ Zrad contiene una serie de comando que te ayudan a automatizar varios procesos: 
 	- Iniciar Ubigeo: Ubigeo son las siglas oficiales para Código de Ubicación Geográfica que usa el INEI para codificar las circunscripciones territoriales del Perú. Este comando crea la tabla y su contenido para poder usarlos para proyectos que serán consumidos en PERÚ
 	- Actualizar Recursos: Todos los comandos de Zrad tienen la opción de actualizar, por ejemplo: Si durante la fase de desarrollo cambian los requerimientos y por ende cambian los nombres y campos de uno o más tablas de tu base de datos Zrad actualiza tus modelos y formularios, ¿Y mis funciones que he creado en mis modelos se perderán?. NO ya que Zrad usa Reflection e identifica los nuevos métodos y no los elimina. :)
 
-2. Actualiza tu aplicación desde tu Base de Datos
+### Actualiza tu aplicación desde tu Base de Datos
 
 Zrad identifica los campos nuevos o modificados y actualiza los modelos vistas y controlador para sincronizar la base de datos con el proyecto. Use los comandos: update-model, update-crud-backend y update-form para actualizar sus modelos
 
-3. NetBeans IDE y Zrad integrado
+### NetBeans IDE y Zrad integrado
 
 NetBeans IDE es uno de los proyectos de Oracle que apoya continuamente a la comunidad PHP por ello Zrad permite que los proyectos creados se puedan abrir con NetBeans además de poder integrar los comandos al Run Zend Command de NetBeans.
 
-4. Zrad Aid
+### Zrad Aid
 
 Zrad Aid es una librería de complemento para tus proyectos con Zend Framework esta librería contiene clases de ayuda para todos tu componentes Zend como: elementos, filtros y validaciones, procesamiento de imágenes, procesamiento PDF personalizados (margin, padding, texto multilínea, etc.), Helpers para manejo de Cadenas (UTF8, Tildes, Ñs y más) y manejo de Fechas.
 
