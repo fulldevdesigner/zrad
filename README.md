@@ -6,7 +6,7 @@ Zrad tiene como principal objetivo automatizar la creación y actualización de 
 
 **"Disminuir 70% de tiempo en desarrollo"**
 
-Para lograr ese objetivo se apoya de **Zend Framework** y su herramienta CLI para crear diversos componentes. Para ver tutoriales y videos visite la web de [www.zend-rad.com](https://www.zend-rad.com/)
+Para lograr ese objetivo se apoya de **Zend Framework** y su herramienta CLI para crear diversos componentes. Para ver tutoriales y videos visite la web de [www.zend-rad.com](http://www.zend-rad.com/)
 
 ## Funciones
 
