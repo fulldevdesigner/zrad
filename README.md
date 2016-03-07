@@ -1,9 +1,12 @@
 ![Logo](http://www.placso.com/zrad-logo.png)
 
-# Zrad Generador de código PHP con Zend Framework
+# Zrad Generador de código PHP
 
 Zrad tiene como principal objetivo automatizar la creación y actualización de procesos base (crear, editar, eliminar) de cada entidad definida en el modelo de datos, permitiendo que las tareas habituales, se realicen automáticamente generando archivos con código destinado a resolver un determinado tipo de problemas de aparición recurrente, permitiendo:
+
 **"Disminuir 70% de tiempo en desarrollo"**
+
+Para lograr ese objetivo se apoya de **Zend Framework** y su herramienta CLI para crear diversos componentes. Para ver tutoriales y videos visite la web de [Zrad](https://www.zend-rad.com/).
 
 ## Funciones
 
@@ -12,28 +15,55 @@ Zrad tiene como principal objetivo automatizar la creación y actualización de 
 Zrad contiene una serie de comando que te ayudan a automatizar varios procesos: desde crear la arquitectura base de un proyecto Zend Framework hasta la creacion de los modelos, backends, frontends y módulos Facebook. Funciones:
 
 - **Crear Proyecto**: Módulos, Conexión a Base de Datos, Google Analytics (GA), Test, Debug, Documentación, Proyecto en NetBeans, Layouts, Internacionalización
-- Crear Formulario: Crea un Formulario (Clase) cuyos elementos son los campos de la tabla asociada. Zrad contiene una serie de directivas de mapeo que se agregaran como Validaciones y Filtros en cada elemento creado, también puedes crear formularios con captcha
-- Crear Formulario Frontend/Backend: Ejecuta el comando "Crear Formulario" y adiciona una vista HTML y validación Javascript con jQuery Validate, además crea o usa un controlador para procesar los datos enviados.
-- Crear Modelo: Zend Framework recomienda usar el patrón "Data Mapper" para representar sus modelos, siguiendo este concepto Zrad crea los 3 elementos: Domain Object, Mapper y el DbTable y no sólo los crea sino que realiza un Mapeo total de las Tablas Relacionadas, agregándolos en la definición del DbTable.
-- Crear Crud Frontend: Ejecuta los comando "Crear Formulario" y "Crear Modelo" además de crear los Módulos (Vistas, Controladores y Modelos) necesarios para orquestar el flujo de registro de cualquier entidad de la Base de Datos.
-- Crear Módulo: Crear todos los recursos necesarios para crear un módulo además de registrarlo en el Bootstrap para obtener los modelos y formularios mediante Autoloader
-- Iniciar Backend: Inicializa el backend creando un módulo administrador con un login simple el diseño del backend esta basado en jQuery UI usando Zrad CSS Framework
-- Crear Crud Backend: Ejecuta los comandos "Crear Formulario Backend", "Crear Modelo", "Crear Modulo" creando las vistas para listar, crear, editar y eliminar todo bajo el framework jQuery UI.
-- Iniciar Facebook: Crea una estructura de proyecto basada en la propuesta: "Arquitectura para Proyectos Facebook" bajo Zend Framework, en ella se detallan las acciones de "Me Gusta", "Registro", "Fin de Registro", "Fin de Campaña", etc.
-- Iniciar Ubigeo: Ubigeo son las siglas oficiales para Código de Ubicación Geográfica que usa el INEI para codificar las circunscripciones territoriales del Perú. Este comando crea la tabla y su contenido para poder usarlos para proyectos que serán consumidos en PERÚ
-- Actualizar Recursos: Todos los comandos de Zrad tienen la opción de actualizar, por ejemplo: Si durante la fase de desarrollo cambian los requerimientos y por ende cambian los nombres y campos de uno o más tablas de tu base de datos Zrad actualiza tus modelos y formularios, ¿Y mis funciones que he creado en mis modelos se perderán?. NO ya que Zrad usa Reflection e identifica los nuevos métodos y no los elimina. :)
+- **Crear Formulario: Crea un Formulario (Clase) cuyos elementos son los campos de la tabla asociada. Zrad contiene una serie de directivas de mapeo que se agregaran como Validaciones y Filtros en cada elemento creado, también puedes crear formularios con captcha
+- **Crear Formulario Frontend/Backend**: Ejecuta el comando "Crear Formulario" y adiciona una vista HTML y validación Javascript con jQuery Validate, además crea o usa un controlador para procesar los datos enviados.
+- **Crear Model**o: Zend Framework recomienda usar el patrón "Data Mapper" para representar sus modelos, siguiendo este concepto Zrad crea los 3 elementos: Domain Object, Mapper y el DbTable y no sólo los crea sino que realiza un Mapeo total de las Tablas Relacionadas, agregándolos en la definición del DbTable.
+- **Crear Crud Frontend**: Ejecuta los comando "Crear Formulario" y "Crear Modelo" además de crear los Módulos (Vistas, Controladores y Modelos) necesarios para orquestar el flujo de registro de cualquier entidad de la Base de Datos.
+- **Crear Módulo**: Crear todos los recursos necesarios para crear un módulo además de registrarlo en el Bootstrap para obtener los modelos y formularios mediante Autoloader
+- **Iniciar Backend**: Inicializa el backend creando un módulo administrador con un login simple el diseño del backend esta basado en jQuery UI usando Zrad CSS Framework
+- **Crear Crud Backend**: Ejecuta los comandos "Crear Formulario Backend", "Crear Modelo", "Crear Modulo" creando las vistas para listar, crear, editar y eliminar todo bajo el framework jQuery UI.
+- **Iniciar Facebook**: Crea una estructura de proyecto basada en la propuesta: "Arquitectura para Proyectos Facebook" bajo Zend Framework, en ella se detallan las acciones de "Me Gusta", "Registro", "Fin de Registro", "Fin de Campaña", etc.
+- **Iniciar Ubigeo**: Ubigeo son las siglas oficiales para Código de Ubicación Geográfica que usa el INEI para codificar las circunscripciones territoriales del Perú. Este comando crea la tabla y su contenido para poder usarlos para proyectos que serán consumidos en PERÚ
+- **Actualizar Recursos**: Todos los comandos de Zrad tienen la opción de actualizar, por ejemplo: Si durante la fase de desarrollo cambian los requerimientos y por ende cambian los nombres y campos de uno o más tablas de tu base de datos Zrad actualiza tus modelos y formularios, ¿Y mis funciones que he creado en mis modelos se perderán?. NO ya que Zrad usa Reflection e identifica los nuevos métodos y no los elimina. :)
 
 ### Actualiza tu aplicación desde tu Base de Datos
 
 Zrad identifica los campos nuevos o modificados y actualiza los modelos vistas y controlador para sincronizar la base de datos con el proyecto. Use los comandos: update-model, update-crud-backend y update-form para actualizar sus modelos
 
-### NetBeans IDE y Zrad integrado
+### NetBeans
 
 NetBeans IDE es uno de los proyectos de Oracle que apoya continuamente a la comunidad PHP por ello Zrad permite que los proyectos creados se puedan abrir con NetBeans además de poder integrar los comandos al Run Zend Command de NetBeans.
 
 ### Zrad Aid
 
-Zrad Aid es una librería de complemento para tus proyectos con Zend Framework esta librería contiene clases de ayuda para todos tu componentes Zend como: elementos, filtros y validaciones, procesamiento de imágenes, procesamiento PDF personalizados (margin, padding, texto multilínea, etc.), Helpers para manejo de Cadenas (UTF8, Tildes, Ñs y más) y manejo de Fechas.
+Zrad Aid es una librería de complemento para tus proyectos con Zend Framework esta librería contiene clases de ayuda para todos tu componentes Zend como: elementos, filtros y validaciones, procesamiento de imágenes, procesamiento PDF personalizados (margin, padding, texto multilínea, etc.), Helpers para manejo de Cadenas (UTF8, Tildes, Ñs y más) y manejo de Fechas. Para más información visita [ZradAid](https://github.com/minayaleon/zrad-aid)
+
+## Intalación
+
+Requerimientos:
+
+- PHP 5.3 ó superior
+- MySQL 5 ó superior
+- Zend Framework 1
+- Zend Tool
+
+Pasos:
+
+- Descargue Zrad y [ZradAid](https://github.com/minayaleon/zrad-aid)
+- Ubiquese en el directorio donde esta instalado Zend (puedes ver el include_path en info.php) y descomprime el Zip descargado en el paso anterior. Nota: ZradAid también debe de estar en este directorio, quedadno de la siguiente manera
+- Abra nuevamente el terminal del SO y escriba el siguiente comando "zf --setup config-file" y presione enter
+
+```
+zf --setup config-file
+Config file written to \Users\Juan/.zf.ini
+```
+
+- Ahora escriba el siguiente comando `zf enable config.provider Zrad_Tool_Project_Provider_Zrad` y presione enter
+
+```
+zf enable config.provider Zrad_Tool_Project_Provider_Zrad
+Provider/Manifest 'Zrad_Tool_Project_Provider_Zrad' was enabled for usage with Zend Tool.
+```
 
 ## Comandos
 
