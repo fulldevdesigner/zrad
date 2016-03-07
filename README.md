@@ -11,7 +11,7 @@ Zrad tiene como principal objetivo automatizar la creación y actualización de 
 
 Zrad contiene una serie de comando que te ayudan a automatizar varios procesos: desde crear la arquitectura base de un proyecto Zend Framework hasta la creacion de los modelos, backends, frontends y módulos Facebook. Funciones:
 
-- Crear Proyecto: Módulos, Conexión a Base de Datos, Google Analytics (GA), Test, Debug, Documentación, Proyecto en NetBeans, Layouts, Internacionalización
+- **Crear Proyecto**: Módulos, Conexión a Base de Datos, Google Analytics (GA), Test, Debug, Documentación, Proyecto en NetBeans, Layouts, Internacionalización
 - Crear Formulario: Crea un Formulario (Clase) cuyos elementos son los campos de la tabla asociada. Zrad contiene una serie de directivas de mapeo que se agregaran como Validaciones y Filtros en cada elemento creado, también puedes crear formularios con captcha
 - Crear Formulario Frontend/Backend: Ejecuta el comando "Crear Formulario" y adiciona una vista HTML y validación Javascript con jQuery Validate, además crea o usa un controlador para procesar los datos enviados.
 - Crear Modelo: Zend Framework recomienda usar el patrón "Data Mapper" para representar sus modelos, siguiendo este concepto Zrad crea los 3 elementos: Domain Object, Mapper y el DbTable y no sólo los crea sino que realiza un Mapeo total de las Tablas Relacionadas, agregándolos en la definición del DbTable.
