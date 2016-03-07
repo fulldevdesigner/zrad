@@ -11,17 +11,17 @@ Zrad tiene como principal objetivo automatizar la creación y actualización de 
 
 Zrad contiene una serie de comando que te ayudan a automatizar varios procesos: desde crear la arquitectura base de un proyecto Zend Framework hasta la creacion de los modelos, backends, frontends y módulos Facebook. Funciones:
 
-	- Crear Proyecto: Módulos, Conexión a Base de Datos, Google Analytics (GA), Test, Debug, Documentación, Proyecto en NetBeans, Layouts, Internacionalización
-	- Crear Formulario: Crea un Formulario (Clase) cuyos elementos son los campos de la tabla asociada. Zrad contiene una serie de directivas de mapeo que se agregaran como Validaciones y Filtros en cada elemento creado, también puedes crear formularios con captcha
-	- Crear Formulario Frontend/Backend: Ejecuta el comando "Crear Formulario" y adiciona una vista HTML y validación Javascript con jQuery Validate, además crea o usa un controlador para procesar los datos enviados.
-	- Crear Modelo: Zend Framework recomienda usar el patrón "Data Mapper" para representar sus modelos, siguiendo este concepto Zrad crea los 3 elementos: Domain Object, Mapper y el DbTable y no sólo los crea sino que realiza un Mapeo total de las Tablas Relacionadas, agregándolos en la definición del DbTable.
-	- Crear Crud Frontend: Ejecuta los comando "Crear Formulario" y "Crear Modelo" además de crear los Módulos (Vistas, Controladores y Modelos) necesarios para orquestar el flujo de registro de cualquier entidad de la Base de Datos.
-	- Crear Módulo: Crear todos los recursos necesarios para crear un módulo además de registrarlo en el Bootstrap para obtener los modelos y formularios mediante Autoloader
-	- Iniciar Backend: Inicializa el backend creando un módulo administrador con un login simple el diseño del backend esta basado en jQuery UI usando Zrad CSS Framework
-	- Crear Crud Backend: Ejecuta los comandos "Crear Formulario Backend", "Crear Modelo", "Crear Modulo" creando las vistas para listar, crear, editar y eliminar todo bajo el framework jQuery UI.
-	- Iniciar Facebook: Crea una estructura de proyecto basada en la propuesta: "Arquitectura para Proyectos Facebook" bajo Zend Framework, en ella se detallan las acciones de "Me Gusta", "Registro", "Fin de Registro", "Fin de Campaña", etc.
-	- Iniciar Ubigeo: Ubigeo son las siglas oficiales para Código de Ubicación Geográfica que usa el INEI para codificar las circunscripciones territoriales del Perú. Este comando crea la tabla y su contenido para poder usarlos para proyectos que serán consumidos en PERÚ
-	- Actualizar Recursos: Todos los comandos de Zrad tienen la opción de actualizar, por ejemplo: Si durante la fase de desarrollo cambian los requerimientos y por ende cambian los nombres y campos de uno o más tablas de tu base de datos Zrad actualiza tus modelos y formularios, ¿Y mis funciones que he creado en mis modelos se perderán?. NO ya que Zrad usa Reflection e identifica los nuevos métodos y no los elimina. :)
+- Crear Proyecto: Módulos, Conexión a Base de Datos, Google Analytics (GA), Test, Debug, Documentación, Proyecto en NetBeans, Layouts, Internacionalización
+- Crear Formulario: Crea un Formulario (Clase) cuyos elementos son los campos de la tabla asociada. Zrad contiene una serie de directivas de mapeo que se agregaran como Validaciones y Filtros en cada elemento creado, también puedes crear formularios con captcha
+- Crear Formulario Frontend/Backend: Ejecuta el comando "Crear Formulario" y adiciona una vista HTML y validación Javascript con jQuery Validate, además crea o usa un controlador para procesar los datos enviados.
+- Crear Modelo: Zend Framework recomienda usar el patrón "Data Mapper" para representar sus modelos, siguiendo este concepto Zrad crea los 3 elementos: Domain Object, Mapper y el DbTable y no sólo los crea sino que realiza un Mapeo total de las Tablas Relacionadas, agregándolos en la definición del DbTable.
+- Crear Crud Frontend: Ejecuta los comando "Crear Formulario" y "Crear Modelo" además de crear los Módulos (Vistas, Controladores y Modelos) necesarios para orquestar el flujo de registro de cualquier entidad de la Base de Datos.
+- Crear Módulo: Crear todos los recursos necesarios para crear un módulo además de registrarlo en el Bootstrap para obtener los modelos y formularios mediante Autoloader
+- Iniciar Backend: Inicializa el backend creando un módulo administrador con un login simple el diseño del backend esta basado en jQuery UI usando Zrad CSS Framework
+- Crear Crud Backend: Ejecuta los comandos "Crear Formulario Backend", "Crear Modelo", "Crear Modulo" creando las vistas para listar, crear, editar y eliminar todo bajo el framework jQuery UI.
+- Iniciar Facebook: Crea una estructura de proyecto basada en la propuesta: "Arquitectura para Proyectos Facebook" bajo Zend Framework, en ella se detallan las acciones de "Me Gusta", "Registro", "Fin de Registro", "Fin de Campaña", etc.
+- Iniciar Ubigeo: Ubigeo son las siglas oficiales para Código de Ubicación Geográfica que usa el INEI para codificar las circunscripciones territoriales del Perú. Este comando crea la tabla y su contenido para poder usarlos para proyectos que serán consumidos en PERÚ
+- Actualizar Recursos: Todos los comandos de Zrad tienen la opción de actualizar, por ejemplo: Si durante la fase de desarrollo cambian los requerimientos y por ende cambian los nombres y campos de uno o más tablas de tu base de datos Zrad actualiza tus modelos y formularios, ¿Y mis funciones que he creado en mis modelos se perderán?. NO ya que Zrad usa Reflection e identifica los nuevos métodos y no los elimina. :)
 
 ### Actualiza tu aplicación desde tu Base de Datos
 
